@@ -1,0 +1,20 @@
+1. In your own words: what is a database?
+
+ans- Database is a collection of information organized in such a way that a computer program
+     can quickly select desired pieces of data. You can think of a database as an electronic filing system,
+     which where to stored your files and records.
+
+2. List some problems with using files instead of a database.
+
+ans- 
+
+
+
+3. What is a schema?
+
+ans- It's basically like an template to show you what the information in the created table.
+
+
+4. When you are not specifically adding/deleting or querying your database, is it still running?
+
+ans- YES.

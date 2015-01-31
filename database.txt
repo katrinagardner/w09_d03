@@ -1,0 +1,46 @@
+sqlite> CREATE TABLE dwarfs (ID INTEGER PRIMARY KEY, name TEXT, color TEXT, time DEFAULT CURRENT_TIME);
+Error: table dwarfs already exists
+sqlite> DROP TABLE dwarfs;  // this is delete the whole table you have created. Make sure you save all the info first.
+
+sqlite> CREATE TABLE dwarfs (ID INTEGER PRIMARY KEY, name TEXT, color TEXT, time DEFAULT CURRENT_TIME);
+
+sqlite> INSERT INTO 'dwarfs' ('name', 'color') VALUES
+   ...>   ('Happy', 'yellow'),
+   ...>   ('Dopey', 'purple'),
+   ...>   ('Sneezy', 'yellow'),
+   ...>   ('Grumpy', 'brown'),
+   ...>   ('Doc', 'brown'),
+   ...>   ('Sleepy', 'blue'),
+   ...>   ('Bashful', 'blue');
+
+sqlite> SELECT * FROM dwarfs;
+1|Happy|yellow|16:07:13
+2|Dopey|purple|16:07:13
+3|Sneezy|yellow|16:07:13
+4|Grumpy|brown|16:07:13
+5|Doc|brown|16:07:13
+6|Sleepy|blue|16:07:13
+7|Bashful|blue|16:07:13
+sqlite>
+
+
+ CREATE TABLE dwarves (
+id INTEGER PRIMARY KEY,
+name TEXT, color TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+
+ CREATE TRIGGER dwarfs BEFORE UPDATE ON dwarves BEGIN
+  UPDATE dwarfs SET updated_at = CURRENT_TIMESTAMP WHERE id = new.id;
+END;
+
+INSERT INTO 'dwarves' (name, color) VALUES ('Happy', 'yellow'),
+('Dopey', 'purple'), ('Sneezy', 'yellow'), ('Grumpy', 'brown'),
+('Doc', 'brown'), ('Sleepy', 'blue'), ('Bashful', 'blue');
+
+ sqlite3 dwarfs.db < seed.sql // this is basically fetch seed.sql template to dwarfs.db
+
+ 
+
+ db.execute (&&......&&) // this is method.

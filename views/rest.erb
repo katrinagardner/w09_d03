@@ -1,0 +1,34 @@
+<html>
+
+<body>
+  <header>
+
+    <h1>pet store</h1>
+    <a href="/pets"> go home </a>
+  </header>
+
+  <p>Name: <%= thispet[0][1] %></p>
+  <p>Type: <%= thispet[0][2] %></p>
+  <p>ID: <%= thispet[0][0] %></P>
+
+
+
+  <h3> Change <%= thispet[0][1] %>'s name here:</h3>
+
+  <form action="/pet/<%= thispet[0][0] %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <!-- put is updating info. use name=_method for put and delete-->
+    <input type="text" name="newname" placeholder="what's their new name?"required>
+    <button>UPDATE IT!!!</button>
+  </form>
+
+
+<p><%= thispet[0][1] %> can be removed here:</p>
+<form action="/pet/<%= thispet[0][0] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <!-- delete is removing info. use name=_method for put and delete-->
+  <button>DELETE IT!!!</button>
+</form>
+
+</body>
+</html>

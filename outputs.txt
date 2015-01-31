@@ -1,0 +1,46 @@
+1|Stuyvesant High School|New York|NY|10282|19:58:58
+2|Nyc Board of Education|New York|NY|10006|19:58:58
+3|The Dalton School|New York|NY|10128|19:58:58
+
+
+0|ID|INTEGER|0||1
+1|name|TEXT|0||0
+2|city|TEXT|0||0
+3|state|TEXT|0||0
+4|zip|INT|0||0
+5|time||0|CURRENT_TIME|0
+
+
+1|Manhattan High|New York|NY|10282|19:58:58
+2|Manhattan High|New York|NY|10006|19:58:58
+3|Manhattan High|New York|NY|10128|19:58:58
+
+
+1|Joanna||Math|
+2|Marry||Math|
+3|Kithy||Music|
+4|John||English|
+5|Nikki||Gym|
+6|Joe||Chinese|
+
+
+sqlite> .schema teachers
+CREATE TABLE teachers (ID INTEGER PRIMARY KEY, name TEXT, email TEXT, subject TEXT, age INT);
+
+
+sqlite> UPDATE teachers SET age="40" WHERE subject="Math";
+sqlite> SELECT*FROM teachers;
+1|Joanna||Math|40
+2|Marry||Math|40
+3|Kithy||Music|
+4|John||English|
+5|Nikki||Gym|
+6|Joe||Chinese|
+
+
+sqlite> DELETE FROM teachers WHERE subject="Math";
+sqlite> SELECT*FROM teachers;
+3|Kithy||Music|
+4|John||English|
+5|Nikki||Gym|
+6|Joe||Chinese|
